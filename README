@@ -1,0 +1,2 @@
+A Scheme interpreter written in Haskell, using the Parsec library.
+Based on "Write Yourself A Scheme In 48 Hours": https://en.wikibooks.org/wiki/Write_Yourself_a_Scheme_in_48_Hours

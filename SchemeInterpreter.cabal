@@ -1,0 +1,42 @@
+name:           SchemeInterpreter
+version:        0.1
+cabal-version:  >=1.2
+build-type:     Simple
+author:         Benesh
+
+executable SchemeInterpreter
+  hs-source-dirs:  src
+  main-is:         Main.hs
+  build-depends:   base >= 4
+  ghc-options:     -Wall
+  other-modules:   
+                   Interpreter.Common,
+                   Interpreter.Parsing,
+                   Interpreter.Evaluating,
+                   Interpreter.Predef,
+                   Interpreter.REPL
+
+test-suite ParserTest
+  type:            exitcode-stdio-1.0
+  main-is:         ParserTest.hs
+  ghc-options:     -Wall -rtsopts
+  build-depends:   base >= 4, HTF > 0.9
+  other-modules:   
+                  Interpreter.Parsing,
+                  Interpreter.ParsingTest,
+                  Interpreter.Evaluating,
+                  Interpreter.Predef,
+                  Interpreter.REPL
+  hs-source-dirs:  
+                  test,
+                  src
+
+library 
+  build-depends:   
+                   base >= 4,
+                   parsec >=3.1.3 && <3.2,
+                   mtl >=2.1.2 && <2.2,
+                   transformers >=0.3.0 && <0.4
+  hs-source-dirs:  src
+  ghc-options:     -Wall
+
